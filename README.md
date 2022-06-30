@@ -2,7 +2,8 @@
 The Legend of Zelda
 
 
-![제목 없음](https://user-images.githubusercontent.com/106663427/176634502-19aa5068-ccec-4da0-b928-3e528b5cbab5.png)
+
+![제목 없음](https://user-images.githubusercontent.com/106663427/176634829-286364d2-768c-47dc-b04b-4ce29b73f156.png)
 
 
 This project is an API portfolio project that took place for 2 weeks. 
