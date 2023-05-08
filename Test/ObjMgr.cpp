@@ -116,8 +116,17 @@ void CObjMgr::Late_Update(void)
 
 	for (size_t i = 0; i < OBJ_END; ++i)
 	{
-		if (i == 9)
+		if (i == OBJ_BLOCK)
+		{
+			for (auto& iter : m_ObjList[OBJ_BLOCK])
+			{
+				RENDERID eID = iter->Get_RenderID();
+				m_RenderSort[eID].push_back(iter);
+
+			}
 			break;
+		}
+			
 
 		for (auto& iter : m_ObjList[i])
 		{
@@ -127,8 +136,8 @@ void CObjMgr::Late_Update(void)
 			if (m_ObjList[i].empty())
 				break;
 
-			/*RENDERID eID = iter->Get_RenderID();
-			m_RenderSort[eID].push_back(iter);*/
+			RENDERID eID = iter->Get_RenderID();
+			m_RenderSort[eID].push_back(iter);
 
 		}
 	}
@@ -143,19 +152,7 @@ void CObjMgr::Render(HDC hDC)
 	int	iCullCX = iMoveX + WINCX + 100;
 	int	iCullCY = iMoveY + WINCY + 100;
 
-
-	for (size_t i = 0; i < OBJ_END; ++i)
-	{
-		for (auto& iter : m_ObjList[i])
-		{
-			if (iter->Get_Info().fX < iCullCX && iter->Get_Info().fY < iCullCY &&
-				iter->Get_Info().fX > iMoveX && iter->Get_Info().fY > iMoveY)
-				iter->Render(hDC);
-		}
-			
-	}
-
-	/*for (size_t i = 0; i < RENDER_END; ++i)
+	for (size_t i = 0; i < RENDER_END; ++i)
 	{
 		m_RenderSort[i].sort(CompareY<CObj*>);
 
@@ -167,6 +164,18 @@ void CObjMgr::Render(HDC hDC)
 		}
 
 		m_RenderSort[i].clear();
+	}
+
+
+	/*for (size_t i = 0; i < OBJ_END; ++i)
+	{
+	for (auto& iter : m_ObjList[i])
+	{
+	if (iter->Get_Info().fX < iCullCX && iter->Get_Info().fY < iCullCY &&
+	iter->Get_Info().fX > iMoveX && iter->Get_Info().fY > iMoveY)
+	iter->Render(hDC);
+	}
+
 	}*/
 
 }

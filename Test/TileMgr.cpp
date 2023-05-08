@@ -264,6 +264,7 @@ void CTileMgr::Save_Tile(SCENEID eStage)
 		break;
 	}
 
+
 	if (INVALID_HANDLE_VALUE == hFile)
 		return;
 

@@ -28,7 +28,7 @@ void CMoblinMonster::Initialize(void)
 	m_fSpeed = 0.005f;
 	m_fDistance = 100.f;
 	m_eDir = DIR_DOWN;
-	m_eGroup = RENDER_MONSTER;
+	m_eGroup = RENDER_PLAYER;
 
 	m_eMonsterType = MOBLIN_MONSTER;
 	m_eCurState = IDLE;

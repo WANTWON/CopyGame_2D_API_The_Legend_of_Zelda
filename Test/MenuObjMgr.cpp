@@ -424,18 +424,18 @@ void CMenuObjMgr::Save_ChoosePoint(void)
 
 
 	DWORD dwByte = 0;
-	int m_iIndex;
+	int m_iIndexQ;
 	int m_iUsedIndex;
 	int m_iSecondUsedIndex;
 
 
-	m_iIndex = static_cast<CChoosePoint*>(m_MenuObjList[MENU_CHOOSE].front())->Get_Index();
+	m_iIndexQ = static_cast<CChoosePoint*>(m_MenuObjList[MENU_CHOOSE].front())->Get_Index();
 	m_iUsedIndex = static_cast<CChoosePoint*>(m_MenuObjList[MENU_CHOOSE].front())->Get_UsedIndex();
 	m_iSecondUsedIndex = static_cast<CChoosePoint*>(m_MenuObjList[MENU_CHOOSE].front())->Get_WUsedIndex();
 	
 
 		
-	WriteFile(hFile, &(m_iIndex), sizeof(int), &dwByte, nullptr);
+	WriteFile(hFile, &(m_iIndexQ), sizeof(int), &dwByte, nullptr);
 	WriteFile(hFile, &(m_iUsedIndex), sizeof(int), &dwByte, nullptr);
 	WriteFile(hFile, &(m_iSecondUsedIndex), sizeof(int), &dwByte, nullptr);
 
@@ -453,25 +453,25 @@ void CMenuObjMgr::Load_ChoosePoint(void)
 
 
 	DWORD dwByte = 0;
-	int m_iIndex;
+	int m_iIndexQ;
 	int m_iUsedIndex;
 	int m_iSecondUsedIndex;
 
 	
 		
-	ReadFile(hFile, &m_iIndex, sizeof(int), &dwByte, nullptr);
+	ReadFile(hFile, &m_iIndexQ, sizeof(int), &dwByte, nullptr);
 	ReadFile(hFile, &m_iUsedIndex, sizeof(int), &dwByte, nullptr);
 	ReadFile(hFile, &m_iSecondUsedIndex, sizeof(int), &dwByte, nullptr);
 
-	static_cast<CChoosePoint*>(CMenuObjMgr::Get_ChoosePos())->Set_Index(m_iIndex);
-	static_cast<CChoosePoint*>(CMenuObjMgr::Get_ChoosePos())->Set_SecondIndex(m_iIndex);
+	static_cast<CChoosePoint*>(CMenuObjMgr::Get_ChoosePos())->Set_Index(m_iIndexQ);
+	static_cast<CChoosePoint*>(CMenuObjMgr::Get_ChoosePos())->Set_SecondIndex(m_iIndexQ);
 	static_cast<CChoosePoint*>(CMenuObjMgr::Get_ChoosePos())->Set_UsedIndex(m_iUsedIndex);
 	static_cast<CChoosePoint*>(CMenuObjMgr::Get_ChoosePos())->Set_SecondUsedIndex(m_iSecondUsedIndex);
 
 	static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iSecondUsedIndex])->Set_beUsed(true);
 	static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iSecondUsedIndex])->Set_WOption(true);
 	//static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex])->Set_beUsed(true);
-	static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex])->Set_WOption(false);
+	static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ])->Set_WOption(false);
 
 	CloseHandle(hFile);
 }

@@ -40,7 +40,7 @@ void CNpc::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Npc/MiniChief_TextBar.bmp", L"MiniChief_TextBar");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Npc/MiniWoodNPC_TextBar.bmp", L"MiniWoodNPC_TextBar");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Npc/FieldNPC_TextBar.bmp", L"FiledNPC_TextBar");
-	m_eGroup = RENDER_GAMEOBJECT;
+	m_eGroup = RENDER_PLAYER;
 
 
 	m_pFrameKey = L"StoreNPC";
@@ -111,6 +111,7 @@ void CNpc::Late_Update(void)
 		m_tFrame.iFrameEnd = 3;
 		break;
 	case FIELD_NPC:
+		m_tInfo.fCY = 70;
 		m_pFrameKey = L"FiledNPC";
 		m_pTextKey = L"FiledNPC_TextBar";
 		m_tFrame.iFrameEnd = 4;
@@ -270,9 +271,9 @@ void CNpc::Render(HDC hDC)
 			hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 			GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
 				int(m_tRect.left + iScrollX) - 10,	// 2,3 인자 :  복사받을 위치 X, Y
-				int(m_tRect.top + iScrollY) - 70,
+				int(m_tRect.top + iScrollY) - 30,
 				int(m_tInfo.fCX) + 15,				// 4,5 인자 : 복사받을 가로, 세로 길이
-				int(m_tInfo.fCY),
+				int(m_tInfo.fCY) + 30,
 				hMemDC,							// 비트맵을 가지고 있는 DC
 				m_tFrame.iFrameStart * (25),								// 비트맵 출력 시작 좌표, X,Y
 				0,

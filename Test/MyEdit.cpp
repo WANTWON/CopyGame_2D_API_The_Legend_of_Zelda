@@ -250,12 +250,10 @@ void CMyEdit::Key_Input(void)
 	{
 		CBlockMgr::Get_Instance()->Picking_Block(pt, BLOCK_GRASS);
 	}
-
 	if (CKeyMgr::Get_Instance()->Key_Down('2'))
 	{
 		CBlockMgr::Get_Instance()->Picking_Block(pt, BLOCK_JAR);
 	}
-
 	if (CKeyMgr::Get_Instance()->Key_Down('3'))
 	{
 		int iX = pt.x - (pt.x % (BLOCKCX)) + int(BLOCKCX*0.5f);
@@ -266,7 +264,6 @@ void CMyEdit::Key_Input(void)
 
 		CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, pObj);
 	}
-
 	if (CKeyMgr::Get_Instance()->Key_Down('4'))
 	{
 		int iX = pt.x - (pt.x % (BLOCKCX)) + int(BLOCKCX*0.5f);
@@ -277,7 +274,6 @@ void CMyEdit::Key_Input(void)
 
 		CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, pObj);
 	}
-
 	if (CKeyMgr::Get_Instance()->Key_Down('5'))
 	{
 		int iX = pt.x - (pt.x % (BLOCKCX)) + int(BLOCKCX*0.5f);
@@ -288,12 +284,10 @@ void CMyEdit::Key_Input(void)
 
 		CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTER, pObj);
 	}
-
 	if (CKeyMgr::Get_Instance()->Key_Down('6'))
 	{
 		CBlockMgr::Get_Instance()->Picking_Block(pt, BLOCK_CHEST);
 	}
-
 	if (CKeyMgr::Get_Instance()->Key_Down('7'))
 	{
 		CBlockMgr::Get_Instance()->Picking_Block(pt, BLOCK_MUSHROOM);
@@ -336,13 +330,16 @@ void CMyEdit::Key_Input(void)
 		CBlockMgr::Get_Instance()->Picking_Block(pt, BLOCK_WOOD);
 	}
 
+
+
+
+
 	if (CKeyMgr::Get_Instance()->Key_Down('S'))
 	{
 		CTileMgr::Get_Instance()->Save_Tile(m_iEditStage);
 		CBlockMgr::Get_Instance()->Save_Block(m_iEditStage);
 		CObjMgr::Get_Instance()->Save_Monster(m_iEditStage);
 	}
-
 
 
 	if (CKeyMgr::Get_Instance()->Key_Down('L'))

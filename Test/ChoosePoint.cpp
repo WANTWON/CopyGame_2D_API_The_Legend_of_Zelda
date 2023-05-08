@@ -9,7 +9,7 @@
 #include "SceneMgr.h"
 
 
-CChoosePoint::CChoosePoint() : m_iIndex(0), m_iUsedIndex(0), m_iWIndex(0), m_iWUsedIndex(0)
+CChoosePoint::CChoosePoint() : m_iIndexQ(0), m_iUsedIndex(0), m_iIndexW(0), m_iWUsedIndex(0)
 {
 }
 
@@ -70,7 +70,7 @@ void CChoosePoint::Render(HDC hDC)
 
 void CChoosePoint::Release(void)
 {
-	m_iIndex = 0;
+	m_iIndexQ = 0;
 }
 
 void CChoosePoint::Key_Input(void)
@@ -80,53 +80,50 @@ void CChoosePoint::Key_Input(void)
 	{
 		
 		
-		--m_iIndex;
-		--m_iWIndex;
-		if (m_iIndex <= 0)
+		--m_iIndexQ;
+		--m_iIndexW;
+		if (m_iIndexQ <= 0)
 		{
-			m_iWIndex = 0;
-			m_iIndex = 0;
+			m_iIndexW = 0;
+			m_iIndexQ = 0;
 		}
 				
 		
 	}
 	else if (CKeyMgr::Get_Instance()->Key_Down(VK_RIGHT))
 	{
-		++m_iIndex;
-		++m_iWIndex;
-		if (m_iIndex >= 11)
+		++m_iIndexQ;
+		++m_iIndexW;
+		if (m_iIndexQ >= 11)
 		{
-			m_iIndex = 11;
-			m_iWIndex = 11;
+			m_iIndexQ = 11;
+			m_iIndexW = 11;
 		}
 				
 	}
 	else if (CKeyMgr::Get_Instance()->Key_Down(VK_DOWN))
 	{
 		
-		if (m_iIndex / 4 < 2)
+		if (m_iIndexQ / 4 < 2)
 		{
-			m_iIndex += 4;
-			m_iWIndex += 4;
+			m_iIndexQ += 4;
+			m_iIndexW += 4;
 		}
 			
 	}
 	else if (CKeyMgr::Get_Instance()->Key_Down(VK_UP))
 	{
 
-		if (m_iIndex / 4 > 0)
+		if (m_iIndexQ / 4 > 0)
 		{
-			m_iIndex -= 4;
-			m_iWIndex -= 4;
+			m_iIndexQ -= 4;
+			m_iIndexW -= 4;
 		}
 			
 	}
 
-
-
-
-	m_tInfo.fX = CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex]->Get_Info().fX;
-	m_tInfo.fY = CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex]->Get_Info().fY;
+	m_tInfo.fX = CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ]->Get_Info().fX;
+	m_tInfo.fY = CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ]->Get_Info().fY;
 
 
 
@@ -135,47 +132,44 @@ void CChoosePoint::Key_Input(void)
 		CSoundMgr::Get_Instance()->StopSound(SOUND_EFFECT);
 		CSoundMgr::Get_Instance()->PlaySound(L"ItemSelect.wav", SOUND_EFFECT, g_fSound);
 
-		if (static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex])->Get_Exist() == false)
+		if (static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ])->Get_Exist() == false)
 			return;
 
-		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex])->Set_beUsed(true);
-		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex])->Set_WOption(false);
-		m_WeaponID = static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndex])->Get_Weapontype();
+		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ])->Set_beUsed(true);
+		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ])->Set_WOption(false); //Q는 파란색
+		m_WeaponID = static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexQ])->Get_Weapontype();
 		CSceneMgr::Get_Instance()->Set_PlayerWeapon(m_WeaponID);
 
-		if (m_iUsedIndex != m_iIndex)
+		if (m_iUsedIndex != m_iIndexQ) //현재 사용되고 있는 Q장착칸이 새로 선택한 아이템과 다르면
 		{
+			// 기존에 장착중인 아이템을 장착 해제 시킨다.
 			static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iUsedIndex])->Set_beUsed(false);
 			static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iUsedIndex])->Set_DrawID(0);
-
-			
-			m_iUsedIndex = m_iIndex;
+			m_iUsedIndex = m_iIndexQ;
 		}
 			
 	}
-
 
 	if (CKeyMgr::Get_Instance()->Key_Down('W'))
 	{
 		CSoundMgr::Get_Instance()->StopSound(SOUND_EFFECT);
 		CSoundMgr::Get_Instance()->PlaySound(L"ItemSelect.wav", SOUND_EFFECT, g_fSound);
 
-		if (static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iWIndex])->Get_Exist() == false)
+		if (static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexW])->Get_Exist() == false)
 			return;
 
-		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iWIndex])->Set_beUsed(true);
-		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iWIndex])->Set_WOption(true);
-		m_WWeaponID = static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iWIndex])->Get_Weapontype();
+		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexW])->Set_beUsed(true);
+		static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexW])->Set_WOption(true); //W는 빨간색
+		m_WWeaponID = static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iIndexW])->Get_Weapontype();
 		
 
 		CSceneMgr::Get_Instance()->Set_PlayerWWeapon(m_WWeaponID);
 
-		if (m_iWUsedIndex != m_iWIndex)
+		if (m_iWUsedIndex != m_iIndexW)
 		{
 			static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iWUsedIndex])->Set_beUsed(false);
 			static_cast<CItemTile*>(CMenuObjMgr::Get_Instance()->Get_Inven()[m_iWUsedIndex])->Set_DrawID(0);
-
-			m_iWUsedIndex = m_iWIndex;
+			m_iWUsedIndex = m_iIndexW;
 		}
 
 	}

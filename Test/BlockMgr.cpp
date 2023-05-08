@@ -110,7 +110,6 @@ void CBlockMgr::Render(HDC hDC)
 	int	iCullCX = iMoveX + WINCX +2;
 	int	iCullCY = iMoveY + WINCY +2;
 
-
 	for (auto& iter : m_BlockList)
 	{
 		if (static_cast<CBlock*>(iter)->Get_BlockType() == BLOCK_JAR)

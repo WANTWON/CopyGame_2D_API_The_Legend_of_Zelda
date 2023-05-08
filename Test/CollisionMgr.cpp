@@ -129,7 +129,6 @@ bool CCollisionMgr::Collsion_Block(list<CObj*> BlockList, CObj * pObj)
 				else
 					pObj->Set_PosX(fWidth);//快面倒
 			}
-
 			return true;
 		}
 	}
@@ -244,12 +243,9 @@ bool CCollisionMgr::Check_Rect(CObj * pObj, CObj * pTarget, float* _fWidth , flo
 
 	if ((fRadiusX > fWidth) && (fRadiusY > fHeight))
 	{
-		*_fWidth = fRadiusX - fWidth;
-		*_fHeight = fRadiusY - fHeight;
-
+		*_fWidth = fRadiusX - fWidth; //面倒等 X农扁
+		*_fHeight = fRadiusY - fHeight; //面倒等 Y农扁
 		return true;
 	}
-
-
 	return false;
 }

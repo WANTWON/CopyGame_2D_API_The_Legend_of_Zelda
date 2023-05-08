@@ -31,7 +31,7 @@ void CJar::Initialize(void)
 	m_tFrame.iFrameEnd = 3;
 	m_tFrame.dwFrameSpeed = 70;
 	m_iOption = 0;
-	m_eGroup = RENDER_PLAYERUPOBJECT;
+	m_eGroup = RENDER_GAMEOBJECT;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Block/Jar.bmp", L"Jar");
 
@@ -54,7 +54,7 @@ int CJar::Update(void)
 
 void CJar::Late_Update(void)
 {
-	m_eGroup = RENDER_PLAYERUPOBJECT;
+	//m_eGroup = RENDER_PLAYERUPOBJECT;
 
 	if (m_bEditorMode)
 		return;
@@ -72,6 +72,8 @@ void CJar::Render(HDC hDC)
 	int iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScrollY();
 
 	HDC	hTileDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
+
+	//Rectangle(hDC, m_tRect.left + iScrollX, m_tRect.top + iScrollY, m_tRect.right + iScrollX, m_tRect.bottom + iScrollY);
 
 	GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
 		int(m_tRect.left + iScrollX),	// 2,3 인자 :  복사받을 위치 X, Y
@@ -150,6 +152,7 @@ void CJar::Be_Picked(void)
 
 	if (CPlayer::THROW == static_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_State() && m_bPicked)
 	{
+		m_eGroup = RENDER_GAMEOBJECT;
 		m_bPicked = false;
 		m_bThrow = true;
 	}
@@ -157,10 +160,12 @@ void CJar::Be_Picked(void)
 		|| CPlayer::PICKUPWALK == static_cast<CPlayer*>(CObjMgr::Get_Instance()->Get_Player())->Get_State()
 		&& m_bPicked)
 	{
-			Set_Target(CObjMgr::Get_Instance()->Get_Player());
+		m_eGroup = RENDER_GAMEOBJECT;
+		Set_Target(CObjMgr::Get_Instance()->Get_Player());
 	}
 	else
 	{
+		m_eGroup = RENDER_GAMEOBJECT;
 		m_bPicked = false;
 	}
 }

@@ -26,7 +26,6 @@ void CMyMenu::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Button/Edit.bmp", L"Edit");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Button/Quit.bmp", L"Quit");
 
-
 	CObj*	pObj = CAbstractFactory<CMyButton>::Create(100.f, 100.f);
 	pObj->Set_FrameKey(L"Start");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BUTTON, pObj);

@@ -260,7 +260,7 @@ void CPlayer::Render(HDC hDC)
 	int iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScrollX();
 	int iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScrollY();
 
-	//Rectangle(hDC, m_tRect.left + iScrollX, m_tRect.top + iScrollY, m_tRect.right + iScrollX, m_tRect.bottom + iScrollY);
+//	Rectangle(hDC, m_tRect.left + iScrollX, m_tRect.top + iScrollY, m_tRect.right + iScrollX, m_tRect.bottom + iScrollY);
 
 	if (PICKUP == m_eCurState || FALL_WATER == m_eCurState || THROW == m_eCurState
 		|| PICKUPWALK == m_eCurState || FALLING == m_eCurState || PULL == m_eCurState || FLY == m_eCurState 

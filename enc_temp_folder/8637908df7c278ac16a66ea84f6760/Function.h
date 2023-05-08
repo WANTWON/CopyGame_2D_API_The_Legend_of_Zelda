@@ -71,6 +71,5 @@ public:
 template<typename T>
 bool		CompareY(T Dest, T Sour)
 {
-	return Dest->Get_Info().fY + Dest->Get_Info().fCY*0.5f 
-		< Sour->Get_Info().fY + Sour->Get_Info().fCY*0.5f;
+	return Dest->Get_Info().fY + Dest->Get_Info().fCY < Sour->Get_Info().fY + Sour->Get_Info().fCY;
 }

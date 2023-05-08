@@ -63,6 +63,8 @@ void CGrass::Render(HDC hDC)
 
 	HDC	hTileDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 
+	//Rectangle(hDC, m_tRect.left + iScrollX, m_tRect.top + iScrollY, m_tRect.right + iScrollX, m_tRect.bottom + iScrollY);
+
 	GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
 		int(m_tRect.left + iScrollX),	// 2,3 인자 :  복사받을 위치 X, Y
 		int(m_tRect.top + iScrollY),

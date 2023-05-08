@@ -66,7 +66,7 @@ void CStage::Initialize(void)
 	}
 
 	
-	CObj* pObj9 = CAbstractFactory<CNpc>::Create(1519, 1090);
+	CObj* pObj9 = CAbstractFactory<CNpc>::Create(1519, 1050);
 	static_cast<CNpc*>(pObj9)->Set_NPCType(FIELD_NPC);
 	CObjMgr::Get_Instance()->Add_Object(OBJ_NPC, pObj9);
 
