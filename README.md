@@ -15,7 +15,7 @@
 
 ## *게임 주요 사진*
 ### 메인화면 / Edit 모드
-<img src="https://user-images.githubusercontent.com/106663427/236748542-67f28ab2-2102-4616-bce5-c36f1fc81471.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236749385-6833800f-26bc-483d-b3e1-051e2032a9e2.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236748542-67f28ab2-2102-4616-bce5-c36f1fc81471.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236749385-6833800f-26bc-483d-b3e1-051e2032a9e2.png" width="40%">
 
 ### 스테이지 구성
 스테이지는 크게 메인필드, 미니컨텐츠, 상점, 던전으로 구성되어있습니다.
@@ -26,11 +26,11 @@
 - 던전
 - 보스룸
 
-<img src="https://user-images.githubusercontent.com/106663427/236750713-89ccdaa2-50df-41dd-8f85-ff788f45b239.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236750725-5d060bcf-3160-40e8-897e-889af915f778.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236750713-89ccdaa2-50df-41dd-8f85-ff788f45b239.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236750725-5d060bcf-3160-40e8-897e-889af915f778.png" width="40%">
 
-<img src="https://user-images.githubusercontent.com/106663427/236751591-ec68fa59-c5ef-4574-a26b-79fd41ba3738.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236751601-a02f9081-c519-4035-93fc-6336292057e1.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236751591-ec68fa59-c5ef-4574-a26b-79fd41ba3738.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236751601-a02f9081-c519-4035-93fc-6336292057e1.png" width="40%">
 
-<img src="https://user-images.githubusercontent.com/106663427/236751610-1d3c7f5d-b087-4866-acf2-a27b034d2a70.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236751624-54cdab9f-fc2d-4240-b95f-56b71a519dca.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236751610-1d3c7f5d-b087-4866-acf2-a27b034d2a70.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236751624-54cdab9f-fc2d-4240-b95f-56b71a519dca.png" width="40%">
 
 
 
@@ -39,7 +39,7 @@
 
 
 ### 1. 플레이어
-<img src="https://user-images.githubusercontent.com/106663427/236753066-37f41e9a-7619-4622-bd1c-2342c7f640a3.gif" width="30%">
+<img src="https://user-images.githubusercontent.com/106663427/236753066-37f41e9a-7619-4622-bd1c-2342c7f640a3.gif" width="40%">
 
 플레이어는 상하좌우 움직임, 구르기, 피격, 타격 등 여러 애니메이션이 존재합니다.
 
@@ -84,7 +84,7 @@ NPC는 공통적으로 플레이어와 Rect 충돌하면 말풍선을 표시하�
 
 ### 5. UI
 
-<img src="https://user-images.githubusercontent.com/106663427/236754129-a224c446-7c46-4d19-8d51-f0eae5bc4def.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236754137-f8377ac0-2ba6-4b90-bc48-4bdd2b2a70c1.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236754129-a224c446-7c46-4d19-8d51-f0eae5bc4def.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236754137-f8377ac0-2ba6-4b90-bc48-4bdd2b2a70c1.png" width="40%">
 
 - UI는 인벤토리창과 퀘스트 창이 있습니다. 인벤토리 창에서는 방향키를 통해 아이템을 고를 수 있고 해당 아이템을 Q창과 W창에 구분하여 장착 시킬 수 있습니다. 퀘스트 창은 현재 받은 퀘스트 내용을 보여주고 완료된 퀘스트는 파란색으로 표시됩니다.
 - 메인 플레이에서는 UI는 아이템 착용 창 / 다이아 개수 / 열쇠 개수 / HP가 존재하며, HP 감소시 하트의 1/4가 감소되는 형태입니다.
@@ -93,11 +93,11 @@ NPC는 공통적으로 플레이어와 Rect 충돌하면 말풍선을 표시하�
 ### 6. 이벤트 오브젝트
 
 ### 소인화 변신
-<img src="https://user-images.githubusercontent.com/106663427/236754465-94eaf9fa-824f-4cf8-b0a4-eefdbc0ee812.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236754465-94eaf9fa-824f-4cf8-b0a4-eefdbc0ee812.png" width="40%">
 
 - 소인화 변신 : 특정 공간에서 특정 키를 누르면 미니 모드로 변하게 됩니다 → 소인국 마을로 이동하는 것이 가능해집니다.
 
-<img src="https://user-images.githubusercontent.com/106663427/236754569-577ed09a-9ba7-4203-a14e-09a34ef0d9de.gif" width="30%">
+<img src="https://user-images.githubusercontent.com/106663427/236754569-577ed09a-9ba7-4203-a14e-09a34ef0d9de.gif" width="40%">
 
 - 던전 퍼즐 : 싱글톤 패턴을 이용해서 던전 내부의 바닥 타일을 밟으면 문이 열리게 처리했습니다.
 - 꺼진 횃불을 랜턴을 이용하여 켜지게 하였습니다.
@@ -109,25 +109,25 @@ NPC는 공통적으로 플레이어와 Rect 충돌하면 말풍선을 표시하�
 
 신발이 가리키는 방향으로 키보드를 누르는 게임입니다. 총 3번의 턴을 성공하면 보상으로 탈것 획득합니다.
 
-<img src="https://user-images.githubusercontent.com/106663427/236756290-3f2ca804-c103-4b04-b998-0b35c9184000.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236756356-f1f77db7-667c-4e24-bf97-0ce24979ca0f.gif" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236756290-3f2ca804-c103-4b04-b998-0b35c9184000.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236756356-f1f77db7-667c-4e24-bf97-0ce24979ca0f.gif" width="40%">
 
 
 - **욕심꾸러기 요정과의 가위바위보**
 
 랜덤으로 가위바위보 게임을 진행합니다. 욕심꾸러기 요정의 비위를 맞춰줘야해서 3번 져줘야 게임 승리합니다.
 
-<img src="https://user-images.githubusercontent.com/106663427/236756476-335b43f1-f50b-4502-93cb-84c80ddd9edf.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236756490-4898be3e-a0d6-4244-8a01-8bd9ada4ef6f.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236756476-335b43f1-f50b-4502-93cb-84c80ddd9edf.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236756490-4898be3e-a0d6-4244-8a01-8bd9ada4ef6f.png" width="40%">
 
 
 - **꽃의 요정을 위해 식물 키우기**
 
 꽃의 요정의 부탁으로 식물을 키워야합니다. 해당 식물은 마법지팡이의 주문으로부터 자라기때문에 링크가 지팡이를 장착하고 화분을 향해 공격해야 꽃이 자랍니다. 모든 꽃이 자라면 보상을 획득합니다.
 
-<img src="https://user-images.githubusercontent.com/106663427/236756637-858db66b-1992-45e1-bdcb-8f4477adf8af.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236756764-88957305-3f64-4c04-b543-ef473cc05ca9.gif" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236756637-858db66b-1992-45e1-bdcb-8f4477adf8af.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236756764-88957305-3f64-4c04-b543-ef473cc05ca9.gif" width="40%">
 
 ### 8. **Client Mode/Edit  Mode**
 
-<img src="https://user-images.githubusercontent.com/106663427/236748542-67f28ab2-2102-4616-bce5-c36f1fc81471.png" width="20%"><img src="https://user-images.githubusercontent.com/106663427/236749385-6833800f-26bc-483d-b3e1-051e2032a9e2.png" width="20%">
+<img src="https://user-images.githubusercontent.com/106663427/236748542-67f28ab2-2102-4616-bce5-c36f1fc81471.png" width="40%"><img src="https://user-images.githubusercontent.com/106663427/236749385-6833800f-26bc-483d-b3e1-051e2032a9e2.png" width="40%">
 
 메인화면. Space 키를 누를시 메뉴 선택화면으로 이동합니다.
 
@@ -140,11 +140,11 @@ Edit 모드를 통해 맵 Object를 설치하는 툴을 만들었습니다. Star
 - Block, Water, Fall 등 플레이어가 충돌하는 타일의 종류에 따라 이루어지는 상호작용이 다릅니다.
     - Water - 해당 렉트와 충돌하면 플레이어가 물에 빠져서 체력이 깎이고 리스폰 됩니다.
 
-        <img src="https://user-images.githubusercontent.com/106663427/236757038-c7747047-3539-4727-842c-a7a5d58beef6.gif" width="30%">
+        <img src="https://user-images.githubusercontent.com/106663427/236757038-c7747047-3539-4727-842c-a7a5d58beef6.gif" width="40%">
         
     - Fall - 플레이어가 낭떠러지에 떨어지고 체력이 깎이고 리스폰 됩니다.
 
-        <img src="https://user-images.githubusercontent.com/106663427/236757074-5d503b37-5e1e-42b3-b542-aca415420fb0.gif" width="30%">
+        <img src="https://user-images.githubusercontent.com/106663427/236757074-5d503b37-5e1e-42b3-b542-aca415420fb0.gif" width="40%">
         
     - Block - 일반 충돌 렉트로 플레이어의 이동 경로를 제어합니다.
 
